@@ -1,16 +1,29 @@
-# starter_flutter
 
-A new Flutter project.
+# Starter Flutter
 
-## Getting Started
+A repository to start building flutter projects with some features.
 
-This project is a starting point for a Flutter application.
+### Features
+- Show Dialog Popup
+- Counter Number
+- Fetch API
+- Image Picker & Cropper
 
-A few resources to get you started if this is your first Flutter project:
+### State Management
+Using Provider
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Packages
+- fluro (https://pub.dev/packages/fluro)
+- http (https://pub.dev/packages/http)
+- image_cropper (https://pub.dev/packages/image_cropper)
+- image_picker (https://pub.dev/packages/image_picker)
+- provider (https://pub.dev/packages/provider)
+- flutter_svg (https://pub.dev/packages/flutter_svg)
+- intl (https://pub.dev/packages/intl)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Mockup
+
+https://www.figma.com/file/Q7KyCXktON6dB1lGUSH902/Starter-Flutter?node-id=9%3A179
+
+
+
