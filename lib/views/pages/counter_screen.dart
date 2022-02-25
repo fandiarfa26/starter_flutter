@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:starter_flutter/constants/api_constants.dart';
-import 'package:starter_flutter/core/providers/counter_provider.dart';
-import 'package:starter_flutter/core/views/components/my_drawer.dart';
+import 'package:starter_flutter/providers/counter_provider.dart';
+import 'package:starter_flutter/views/components/my_drawer.dart';
 import 'package:starter_flutter/utils/ui/custom_styles.dart';
 
 class CounterScreen extends StatefulWidget {
@@ -15,10 +14,6 @@ class CounterScreen extends StatefulWidget {
 class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
-    final double tsf = width / mockupWidth;
-
     final CounterProvider counterProvider =
         Provider.of<CounterProvider>(context, listen: false);
 
@@ -29,22 +24,21 @@ class _CounterScreenState extends State<CounterScreen> {
         centerTitle: true,
         title: Text(
           "Counter",
-          textScaleFactor: tsf,
           style: Typo.b18p,
         ),
       ),
       drawer: const MyDrawer(),
       body: Padding(
-        padding: EdgeInsets.all(20 / mockupWidth * width),
+        padding: const EdgeInsets.all(20),
         child: SizedBox(
-          width: width,
+          width: MediaQuery.of(context).size.width,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Consumer<CounterProvider>(builder: (context, counterP, _) {
                 return Padding(
-                  padding: EdgeInsets.only(bottom: 50 / mockupHeight * height),
+                  padding: const EdgeInsets.only(bottom: 50),
                   child: Text(
                     counterP.number.toString(),
                     style: Typo.b64p.copyWith(
@@ -62,23 +56,23 @@ class _CounterScreenState extends State<CounterScreen> {
                       onPressed: () {
                         counterProvider.decreaseNumber();
                       },
-                      child: Text("-1", textScaleFactor: tsf),
+                      child: const Text("-1"),
                     ),
                   ),
-                  SizedBox(width: 10 / mockupWidth * width),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: ElevatedButton(
                       style: Btn.success,
                       onPressed: () {
                         counterProvider.increaseNumber();
                       },
-                      child: Text("+1", textScaleFactor: tsf),
+                      child: const Text("+1"),
                     ),
                   ),
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(top: 8 / mockupHeight * height),
+                padding: const EdgeInsets.only(top: 8),
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -86,7 +80,7 @@ class _CounterScreenState extends State<CounterScreen> {
                     onPressed: () {
                       counterProvider.resetNumber();
                     },
-                    child: Text("Reset", textScaleFactor: tsf),
+                    child: const Text("Reset"),
                   ),
                 ),
               )

@@ -14,4 +14,10 @@ class PostModel {
         title: json['title'],
         description: json['body'],
       );
+
+  Map<String, dynamic> toJson() => {
+        "id": id,
+        "title": title,
+        "description": description,
+      };
 }

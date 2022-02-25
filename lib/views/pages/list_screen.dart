@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:starter_flutter/constants/api_constants.dart';
-import 'package:starter_flutter/core/models/post_model.dart';
-import 'package:starter_flutter/core/providers/post_provider.dart';
-import 'package:starter_flutter/core/views/components/my_drawer.dart';
+import 'package:starter_flutter/models/post_model.dart';
+import 'package:starter_flutter/providers/post_provider.dart';
+import 'package:starter_flutter/views/components/my_drawer.dart';
 import 'package:starter_flutter/routes/router.dart';
 import 'package:starter_flutter/utils/ui/custom_styles.dart';
 import 'package:starter_flutter/utils/ui/screen_arguments.dart';
@@ -24,10 +23,6 @@ class _ListScreenState extends State<ListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
-    final double tsf = width / mockupWidth;
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -35,7 +30,6 @@ class _ListScreenState extends State<ListScreen> {
         centerTitle: true,
         title: Text(
           "Fetch API",
-          textScaleFactor: tsf,
           style: Typo.b18p,
         ),
       ),
@@ -57,13 +51,11 @@ class _ListScreenState extends State<ListScreen> {
               title: Text(
                 post.title!,
                 style: Typo.r14p.copyWith(color: Colors.black),
-                textScaleFactor: tsf,
                 overflow: TextOverflow.ellipsis,
               ),
               subtitle: Text(
                 post.description!,
                 style: Typo.r12p.copyWith(color: Colors.grey[400]),
-                textScaleFactor: tsf,
                 overflow: TextOverflow.ellipsis,
               ),
               trailing: Icon(Icons.chevron_right, color: Colors.grey[400]),
@@ -81,8 +73,9 @@ class _ListScreenState extends State<ListScreen> {
         }
 
         return ListView(
-            padding: EdgeInsets.symmetric(vertical: 10 / mockupHeight * height),
-            children: _listPosts);
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          children: _listPosts,
+        );
       }),
     );
   }

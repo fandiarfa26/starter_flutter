@@ -1,3 +1,7 @@
-const String apiUrl = 'https://jsonplaceholder.typicode.com';
+import 'package:starter_flutter/constants/app_constants.dart';
 
-Uri postsUrl = Uri.parse(apiUrl + '/posts');
+Uri postsUrl = Uri.parse(domainWeb + '/posts');
+
+Uri postDetailUrl(String id) {
+  return Uri.parse(domainWeb + '/posts/$id');
+}

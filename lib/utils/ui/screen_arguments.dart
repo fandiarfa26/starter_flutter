@@ -1,4 +1,4 @@
-import 'package:starter_flutter/core/models/post_model.dart';
+import 'package:starter_flutter/models/post_model.dart';
 
 class DetailScreenArguments {
   PostModel post;

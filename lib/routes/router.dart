@@ -24,5 +24,13 @@ class RouterApp {
     router.define('/upload_image',
         handler: RouterHandler.uploadImageHandler,
         transitionType: TransitionType.none);
+
+    router.define('/cached_image',
+        handler: RouterHandler.cachedImageNetHandler,
+        transitionType: TransitionType.none);
+
+    router.define('/package_info',
+        handler: RouterHandler.infoHandler,
+        transitionType: TransitionType.none);
   }
 }

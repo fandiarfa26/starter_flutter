@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:starter_flutter/constants/api_constants.dart';
-import 'package:starter_flutter/core/models/post_model.dart';
+import 'package:starter_flutter/models/post_model.dart';
 import 'package:starter_flutter/utils/ui/custom_styles.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -14,10 +13,6 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
-    final double tsf = width / mockupWidth;
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -25,12 +20,11 @@ class _DetailScreenState extends State<DetailScreen> {
         centerTitle: true,
         title: Text(
           "Detail Post",
-          textScaleFactor: tsf,
           style: Typo.b18p,
         ),
       ),
       body: ListView(
-        padding: EdgeInsets.all(20 / mockupWidth * width),
+        padding: const EdgeInsets.all(20),
         children: [
           Text(
             widget.post.title!,
@@ -40,10 +34,7 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(
-              top: 20 / mockupHeight * height,
-              bottom: 10 / mockupHeight * height,
-            ),
+            padding: const EdgeInsets.only(top: 20, bottom: 10),
             child: Text(
               "Description",
               style: Typo.b14p.copyWith(color: Colors.grey[400]),

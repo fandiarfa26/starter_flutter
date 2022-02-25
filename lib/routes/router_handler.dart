@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
-import 'package:starter_flutter/core/views/pages/counter_screen.dart';
-import 'package:starter_flutter/core/views/pages/detail_screen.dart';
-import 'package:starter_flutter/core/views/pages/list_screen.dart';
-import 'package:starter_flutter/core/views/pages/upload_image_screen.dart';
-import 'package:starter_flutter/core/views/pages/welcome_screen.dart';
+import 'package:starter_flutter/views/pages/cached_network_image_screen.dart';
+import 'package:starter_flutter/views/pages/counter_screen.dart';
+import 'package:starter_flutter/views/pages/detail_screen.dart';
+import 'package:starter_flutter/views/pages/list_screen.dart';
+import 'package:starter_flutter/views/pages/package_info_screen.dart';
+import 'package:starter_flutter/views/pages/upload_image_screen.dart';
+import 'package:starter_flutter/views/pages/welcome_screen.dart';
 import 'package:starter_flutter/utils/ui/screen_arguments.dart';
 
 class RouterHandler {
@@ -30,4 +32,11 @@ class RouterHandler {
   static Handler uploadImageHandler = Handler(
       handlerFunc: (BuildContext? context, Map<String, dynamic> params) =>
           const UploadImageScreen());
+
+  static Handler cachedImageNetHandler = Handler(
+      handlerFunc: (BuildContext? context, Map<String, dynamic> params) =>
+          const CachedNetworkImageScreen());
+  static Handler infoHandler = Handler(
+      handlerFunc: (BuildContext? context, Map<String, dynamic> params) =>
+          const PackageInfoScreen());
 }

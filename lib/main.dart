@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:starter_flutter/core/providers/counter_provider.dart';
 
-import './constants/api_constants.dart';
+import 'constants/app_constants.dart';
 import './utils/ui/custom_styles.dart';
 import './routes/router.dart';
-import 'core/providers/image_pick_provider.dart';
-import 'core/providers/post_provider.dart';
+import './providers/counter_provider.dart';
+import './providers/image_pick_provider.dart';
+import './providers/info_provider.dart';
+import './providers/post_provider.dart';
 
 void main() {
   RouterApp.setupRouter();
@@ -28,6 +29,7 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(create: (context) => CounterProvider()),
         ChangeNotifierProvider(create: (context) => PostProvider()),
         ChangeNotifierProvider(create: (context) => ImagePickProvider()),
+        ChangeNotifierProvider(create: (context) => InfoProvider()),
       ],
       child: MaterialApp(
         title: appTitle,
